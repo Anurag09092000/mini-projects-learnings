@@ -12,17 +12,19 @@ const Counter = () => {
   };
   return (
     <div>
-      <h1>Your Value...{increment}</h1>
-      <input
-        type="text"
-        placeholder="enter the value"
-        value={initialValue}
-        onChange={(e) => {
-          setInitialValue(parseInt(e.target.value));
-        }}
-      />
-      <button onClick={add}> AddByInput </button>
-      <button onClick={sub}> SubByInput </button>
+      <div>
+        <h1>Your Value...{increment}</h1>
+        <input
+          type="text"
+          placeholder="enter the value"
+          value={initialValue}
+          onChange={(e) => {
+            setInitialValue(parseInt(e.target.value));
+          }}
+        />
+        <button onClick={add}> AddByInput </button>
+        <button onClick={sub}> SubByInput </button>
+      </div>
     </div>
   );
 };

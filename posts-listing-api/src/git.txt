@@ -1,0 +1,6 @@
+/**
+1. Check the status - git status
+2. Add files - git add . -> dot is for all the files, if we wish to add specific files, we write their name, eg: git add fileA.js fileB.js
+3. Commit with messgae - git commit -m "my message here"
+4. Push to github.com - git push origin
+*/
