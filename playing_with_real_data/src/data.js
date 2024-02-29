@@ -1,0 +1,92 @@
+export const data = [
+  {
+    id: 1,
+    name: "Alice",
+    age: 25,
+    city: "New York",
+  },
+  {
+    id: 2,
+    name: "Bob",
+    age: 30,
+    city: "San Francisco",
+  },
+  {
+    id: 3,
+    name: "Charlie",
+    age: 35,
+    city: "Los Angeles",
+  },
+  {
+    id: 4,
+    name: "David",
+    age: 40,
+    city: "Chicago",
+  },
+  {
+    id: 5,
+    name: "Eve",
+    age: 45,
+    city: "Miami",
+  },
+  {
+    id: 6,
+    name: "Frank",
+    age: 50,
+    city: "Seattle",
+  },
+  {
+    id: 7,
+    name: "Grace",
+    age: 55,
+    city: "Boston",
+  },
+  {
+    id: 8,
+    name: "Helen",
+    age: 60,
+    city: "Denver",
+  },
+  {
+    id: 9,
+    name: "Ivy",
+    age: 65,
+    city: "Atlanta",
+  },
+  {
+    id: 10,
+    name: "Jack",
+    age: 70,
+    city: "Houston",
+  },
+  {
+    id: 11,
+    name: "Kevin",
+    age: 75,
+    city: "Philadelphia",
+  },
+  {
+    id: 12,
+    name: "Linda",
+    age: 80,
+    city: "Phoenix",
+  },
+  {
+    id: 13,
+    name: "Michael",
+    age: 85,
+    city: "San Diego",
+  },
+  {
+    id: 14,
+    name: "Nancy",
+    age: 90,
+    city: "Dallas",
+  },
+  {
+    id: 15,
+    name: "Olivia",
+    age: 95,
+    city: "Austin",
+  },
+];
