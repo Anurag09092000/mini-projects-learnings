@@ -1,5 +1,3 @@
-import { data } from "./data";
-
 function Countries({ user }) {
   return (
     <div

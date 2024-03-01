@@ -1,18 +1,12 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+
 const FetchApi = () => {
   const [storedData, setStoredData] = useState([]);
   const [isLoding, setIsLoading] = useState(false);
 
-  // async function getapi() {
-  //   setIsLoading(true);
-  //   const api = await fetch("https://jsonplaceholder.typicode.com/posts");
-  //   const data = await api.json();
-  //   setStoredData(data);
-  //   setIsLoading(false);
-
-  //   //console.log(data);
-  // }
+  // useEffect(() => {
+  //   getapi();
+  // }, []);
 
   async function getapi() {
     try {
