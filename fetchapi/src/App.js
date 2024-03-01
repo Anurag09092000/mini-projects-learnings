@@ -4,9 +4,6 @@ const FetchApi = () => {
   const [storedData, setStoredData] = useState([]);
   const [isLoding, setIsLoading] = useState(false);
 
-  // useEffect(() => {
-  //   getapi();
-  // }, []);
 
   async function getapi() {
     setIsLoading(true);
