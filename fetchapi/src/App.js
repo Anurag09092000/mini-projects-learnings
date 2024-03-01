@@ -1,21 +1,29 @@
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
+import axios from "axios";
 const FetchApi = () => {
   const [storedData, setStoredData] = useState([]);
   const [isLoding, setIsLoading] = useState(false);
 
-  // useEffect(() => {
-  //   getapi();
-  // }, []);
+  // async function getapi() {
+  //   setIsLoading(true);
+  //   const api = await fetch("https://jsonplaceholder.typicode.com/posts");
+  //   const data = await api.json();
+  //   setStoredData(data);
+  //   setIsLoading(false);
+
+  //   //console.log(data);
+  // }
 
   async function getapi() {
-    setIsLoading(true);
-    const api = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const data = await api.json();
-    setStoredData(data);
-    setIsLoading(false);
-
-    //console.log(data);
+    try {
+      setIsLoading(true);
+      const api = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      setStoredData(api.data);
+      setIsLoading(false);
+      console.log(api.data);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   // getapi();
@@ -26,7 +34,7 @@ const FetchApi = () => {
       ) : (
         <div>
           <h1>Api Data</h1>
-          <button onClick={getapi}> Clik ME</button>
+          <button onClick={getapi}> Click ME</button>
           {/* {storedData.length > 0 ? (
         storedData.map(function (item, index) {
           return (
