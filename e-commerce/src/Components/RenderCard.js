@@ -27,6 +27,9 @@ const RenderCard = ({ data }) => {
         width={200}
         height={200}
       />
+      <button className="btn btn-primary">-</button>
+      {0}
+      <button className="btn btn-primary">+</button>
     </div>
   );
 };

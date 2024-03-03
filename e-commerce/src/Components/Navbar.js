@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { getProducts } from "./utils/getProduct";
-const Navbar = ({ searchText, setSearchText }) => {
-  //   const [searchText, setSearchText] = useState("");
-  function filterData(searchText, products) {
-    return products.filter((product) => product.name.includes(searchText));
-  }
-
+const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -31,7 +26,7 @@ const Navbar = ({ searchText, setSearchText }) => {
               </a>
             </li>
           </ul>
-          <form className="d-flex">
+          {/* <form className="d-flex">
             <input
               className="form-control me-2"
               type="search"
@@ -51,7 +46,7 @@ const Navbar = ({ searchText, setSearchText }) => {
             >
               Search
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
     </nav>
