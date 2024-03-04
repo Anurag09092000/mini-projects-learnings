@@ -4,20 +4,20 @@ import Navbar from "./Components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [numberOfItems, setNumberOfItems] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
   const add = () => {
-    setNumberOfItems(numberOfItems + 1);
+    setCartTotal(cartTotal + 1);
   };
   const sub = () => {
-    if (numberOfItems > 0) setNumberOfItems(numberOfItems - 1);
+    if (cartTotal > 0) setCartTotal(cartTotal - 1);
   };
   return (
     <div>
       <Navbar />
-      <p>Total Items in cart - {numberOfItems} </p>
+      <p>Total Items in cart - {cartTotal} </p>
       <Cards
-        numberOfItems={numberOfItems}
-        setNumberOfItems={setNumberOfItems}
+        cartTotal={cartTotal}
+        setCartTotal={setCartTotal}
         add={add}
         sub={sub}
       />

@@ -1,13 +1,15 @@
 import { useState } from "react";
 
-const RenderCard = ({ data, add, sub, numberOfItems }) => {
-  //const [numberOfItems, setNumberOfItems] = useState(0);
-  //   const add = () => {
-  //     setNumberOfItems(numberOfItems + 1);
-  //   };
-  //   const sub = () => {
-  //     setNumberOfItems(numberOfItems - 1);
-  //   };
+const RenderCard = ({ data, add, sub }) => {
+  const [items, setItems] = useState(0);
+  const addItems = () => {
+    setItems(items + 1);
+    add();
+  };
+  const subItems = () => {
+    if (items > 0) setItems(items - 1);
+    sub();
+  };
   return (
     <div
       style={{
@@ -36,11 +38,11 @@ const RenderCard = ({ data, add, sub, numberOfItems }) => {
         width={200}
         height={200}
       />
-      <button className="btn btn-danger" onClick={sub}>
+      <button className="btn btn-danger" onClick={subItems}>
         -
       </button>
-      {numberOfItems}
-      <button className="btn btn-primary" onClick={add}>
+      {items}
+      <button className="btn btn-primary" onClick={addItems}>
         +
       </button>
     </div>

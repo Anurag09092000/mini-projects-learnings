@@ -8,7 +8,7 @@ function filterData(searchText, products) {
   );
 }
 
-const Cards = ({ add, sub, numberOfItems }) => {
+const Cards = ({ add, sub }) => {
   const [searchText, setSearchText] = useState("");
   const products = getProducts();
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -35,11 +35,7 @@ const Cards = ({ add, sub, numberOfItems }) => {
               setSearchText(e.target.value);
             }}
           />
-          <button
-            className="btn btn-outline-success"
-            type="submit"
-            // onClick={}
-          >
+          <button className="btn btn-outline-success" type="submit">
             Search
           </button>
         </form>
@@ -54,13 +50,7 @@ const Cards = ({ add, sub, numberOfItems }) => {
         }}
       >
         {filteredProducts.map((title, index) => (
-          <RenderCard
-            data={title}
-            key={index}
-            add={add}
-            sub={sub}
-            numberOfItems={numberOfItems}
-          />
+          <RenderCard data={title} key={index} add={add} sub={sub} />
         ))}
       </div>
     </div>
