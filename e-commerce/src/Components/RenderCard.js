@@ -1,4 +1,13 @@
-const RenderCard = ({ data }) => {
+import { useState } from "react";
+
+const RenderCard = ({ data, add, sub, numberOfItems }) => {
+  //const [numberOfItems, setNumberOfItems] = useState(0);
+  //   const add = () => {
+  //     setNumberOfItems(numberOfItems + 1);
+  //   };
+  //   const sub = () => {
+  //     setNumberOfItems(numberOfItems - 1);
+  //   };
   return (
     <div
       style={{
@@ -27,9 +36,13 @@ const RenderCard = ({ data }) => {
         width={200}
         height={200}
       />
-      <button className="btn btn-primary">-</button>
-      {0}
-      <button className="btn btn-primary">+</button>
+      <button className="btn btn-danger" onClick={sub}>
+        -
+      </button>
+      {numberOfItems}
+      <button className="btn btn-primary" onClick={add}>
+        +
+      </button>
     </div>
   );
 };

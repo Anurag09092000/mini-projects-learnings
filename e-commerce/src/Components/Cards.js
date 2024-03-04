@@ -8,7 +8,7 @@ function filterData(searchText, products) {
   );
 }
 
-const Cards = () => {
+const Cards = ({ add, sub, numberOfItems }) => {
   const [searchText, setSearchText] = useState("");
   const products = getProducts();
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -54,7 +54,13 @@ const Cards = () => {
         }}
       >
         {filteredProducts.map((title, index) => (
-          <RenderCard data={title} key={index} />
+          <RenderCard
+            data={title}
+            key={index}
+            add={add}
+            sub={sub}
+            numberOfItems={numberOfItems}
+          />
         ))}
       </div>
     </div>
