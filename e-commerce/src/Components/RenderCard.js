@@ -7,8 +7,10 @@ const RenderCard = ({ data, add, sub }) => {
     add();
   };
   const subItems = () => {
-    if (items > 0) setItems(items - 1);
-    sub();
+    if (items > 0) {
+      setItems(items - 1);
+      sub();
+    }
   };
   return (
     <div
