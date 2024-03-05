@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getProducts } from "./utils/getProduct";
-const Navbar = () => {
+const Navbar = ({ searchItem, setSearchItem, cartTotal }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -26,27 +26,45 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          {/* <form className="d-flex">
+          <form className="d-flex">
             <input
               className="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
-              value={searchText}
+              value={searchItem}
               onChange={(e) => {
-                setSearchText(e.target.value);
+                setSearchItem(e.target.value);
               }}
             />
             <button
               className="btn btn-outline-success"
               type="submit"
               onClick={() => {
-                const filteredData = filterData(searchText, getProducts());
+                // const filteredData = filterData(searchText, getProducts());
               }}
             >
               Search
             </button>
-          </form> */}
+          </form>
+          <p
+            className="nav-item cart"
+            style={{
+              color: "white",
+              textAlign: "center",
+              padding: "10px",
+              marginTop: "10px",
+            }}
+          >
+            Cart-Items :
+            <span
+              style={{
+                margin: "4px",
+              }}
+            >
+              {cartTotal}
+            </span>
+          </p>
         </div>
       </div>
     </nav>

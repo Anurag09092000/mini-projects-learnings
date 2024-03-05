@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [cartTotal, setCartTotal] = useState(0);
+  const [searchItem, setSearchItem] = useState("");
   const add = () => {
     setCartTotal(cartTotal + 1);
   };
@@ -13,11 +14,14 @@ function App() {
   };
   return (
     <div>
-      <Navbar />
-      <p>Total Items in cart - {cartTotal} </p>
-      <Cards
+      <Navbar
+        searchItem={searchItem}
+        setSearchItem={setSearchItem}
         cartTotal={cartTotal}
-        setCartTotal={setCartTotal}
+      />
+      <Cards
+        searchItem={searchItem}
+        setSearchItem={setSearchItem}
         add={add}
         sub={sub}
       />

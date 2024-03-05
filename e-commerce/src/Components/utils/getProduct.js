@@ -43,7 +43,7 @@ export const getProducts = () => {
       productId: 7,
     },
     {
-      name: "Skiny Jeans",
+      name: "Skiny Jeasn",
       image:
         "https://rukminim2.flixcart.com/image/850/1000/xif0q/jean/3/r/v/31-wee0116211537-american-eagle-outfitters-original-imagkjy5e6hmeugz.jpeg?q=90&crop=false",
       productId: 8,

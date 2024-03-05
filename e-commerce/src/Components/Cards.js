@@ -8,38 +8,17 @@ function filterData(searchText, products) {
   );
 }
 
-const Cards = ({ add, sub }) => {
-  const [searchText, setSearchText] = useState("");
+const Cards = ({ add, sub, searchItem }) => {
   const products = getProducts();
   const [filteredProducts, setFilteredProducts] = useState(products);
 
   useEffect(() => {
-    const filteredData = filterData(searchText, products);
+    const filteredData = filterData(searchItem, products);
     setFilteredProducts(filteredData);
-  }, [searchText]);
+  }, [searchItem]);
 
   return (
     <div>
-      <div>
-        <form className="d-flex">
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-            onBlur={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
-          <button className="btn btn-outline-success" type="submit">
-            Search
-          </button>
-        </form>
-      </div>
       <div
         style={{
           display: "flex",
