@@ -1,6 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getProducts } from "./utils/getProduct";
-const Navbar = ({ searchItem, setSearchItem, cartTotal }) => {
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchResults } from "../redux/store/searchSlice";
+
+const Navbar = ({ searchItem, setSearchItem }) => {
+  const [searchText, setSearchText] = useState("");
+  const item = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    //const search = searchText.trim();
+    dispatch(setSearchResults({ searchText }));
+  }, [searchText]);
+
+  const handleSearch = (e) => {
+    // e.preventDefault();
+    if (searchText == "") {
+      alert("Enter the item to be searched");
+    }
+  };
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -21,9 +40,29 @@ const Navbar = ({ searchItem, setSearchItem, cartTotal }) => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto me-2">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link to="/" className="nav-link active" aria-current="page">
                 Home
-              </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/men" className="nav-link active" aria-current="page">
+                Men
+              </Link>
+            </li>{" "}
+            <li className="nav-item">
+              <Link to="/women" className="nav-link active" aria-current="page">
+                Women
+              </Link>
+            </li>{" "}
+            <li className="nav-item">
+              <Link to="/kids" className="nav-link active" aria-current="page">
+                Kid
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/cart" className="nav-link active" aria-current="page">
+                Cart
+              </Link>
             </li>
           </ul>
           <form className="d-flex">
@@ -32,17 +71,13 @@ const Navbar = ({ searchItem, setSearchItem, cartTotal }) => {
               type="search"
               placeholder="Search"
               aria-label="Search"
-              value={searchItem}
-              onChange={(e) => {
-                setSearchItem(e.target.value);
-              }}
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
             />
             <button
               className="btn btn-outline-success"
-              type="submit"
-              onClick={() => {
-                // const filteredData = filterData(searchText, getProducts());
-              }}
+              type="button"
+              onClick={handleSearch}
             >
               Search
             </button>
@@ -62,7 +97,7 @@ const Navbar = ({ searchItem, setSearchItem, cartTotal }) => {
                 margin: "4px",
               }}
             >
-              {cartTotal}
+              {item.length}
             </span>
           </p>
         </div>

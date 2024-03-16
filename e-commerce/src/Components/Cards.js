@@ -1,22 +1,23 @@
 import { getProducts } from "./utils/getProduct";
 import RenderCard from "./RenderCard";
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
-function filterData(searchText, products) {
-  return products.filter((product) =>
-    product.name.toLowerCase().includes(searchText.toLowerCase())
-  );
-}
+// function filterData(searchText, products) {
+//   return products.filter((product) =>
+//     product.name.toLowerCase().includes(searchText.toLowerCase())
+//   );
+// }
 
 const Cards = ({ add, sub, searchItem }) => {
-  const products = getProducts();
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  // const products = getProducts();
+  // const [filteredProducts, setFilteredProducts] = useState(products);
 
-  useEffect(() => {
-    const filteredData = filterData(searchItem, products);
-    setFilteredProducts(filteredData);
-  }, [searchItem]);
-
+  // useEffect(() => {
+  //   const filteredData = filterData(searchItem, products);
+  //   setFilteredProducts(filteredData);
+  // }, [searchItem]);
+  const searchResults = useSelector((state) => state.search);
   return (
     <div>
       <div
@@ -28,9 +29,12 @@ const Cards = ({ add, sub, searchItem }) => {
           marginInline: "10px",
         }}
       >
-        {filteredProducts.map((title, index) => (
+        {searchResults.data.map((title, index) => (
           <RenderCard data={title} key={index} add={add} sub={sub} />
         ))}
+        {/* {filteredProducts.map((title, index) => (
+          <RenderCard data={title} key={index} add={add} sub={sub} />
+        ))} */}
       </div>
     </div>
   );
